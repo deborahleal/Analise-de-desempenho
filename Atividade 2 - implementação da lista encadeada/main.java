@@ -29,6 +29,7 @@ public class main {
             } else if (acao.equals("R")) {
                 int numero = Integer.parseInt(partes[1]);
                 lista.remove((Integer) numero);
+                
             } else if (acao.equals("P")) {
                 for (int val : lista) {
                     System.out.print(val + " ");
