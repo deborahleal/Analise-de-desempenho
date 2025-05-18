@@ -3,7 +3,7 @@ import psutil
 import platform
 import os
 
-# Função Bubble Sort
+
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -12,7 +12,7 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
-# Leitura do arquivo
+
 def ler_arquivo(nome_arquivo):
     try:
         with open(nome_arquivo, "r") as file:
@@ -21,13 +21,13 @@ def ler_arquivo(nome_arquivo):
         print(f"Erro: Arquivo '{nome_arquivo}' não encontrado.")
         exit(1)
 
-# Escrita do arquivo
+
 def escrever_arquivo(nome_arquivo, dados):
     with open(nome_arquivo, "w") as file:
         for numero in dados:
             file.write(f"{numero}\n")
 
-# Mede tempo e memória
+
 def medir_desempenho(funcao, dados):
     processo = psutil.Process(os.getpid())
     mem_inicio = processo.memory_info().rss / 1024  # em KB
@@ -53,10 +53,9 @@ def main():
     arquivo_entrada = "arquivo_3.txt"
     arquivo_saida = "arq-saida.txt"
 
-    # Lê os dados do arquivo
     dados = ler_arquivo(arquivo_entrada)
 
-    # Mostra informações do sistema
+    
     print_info_sistema()
 
     # Bubble Sort
@@ -71,7 +70,6 @@ def main():
     print(f"Tempo: {tempo_sort:.2f} ms")
     print(f"Memória RAM usada: {memoria_sort:.2f} KB\n")
 
-    # Salva no arquivo de saída
     escrever_arquivo(arquivo_saida, dados_ordenados)
     print(f"Arquivo ordenado salvo como '{arquivo_saida}'")
 
